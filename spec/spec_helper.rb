@@ -1,5 +1,6 @@
 require "bundler/setup"
-require "ruby/refactor"
+require "parser/current"
+require "ruby_refactor/tree"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -11,4 +12,12 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+end
+
+def node(opts = {})
+  RubyRefactor::Tree::Node.new(opts)
+end
+
+def ast(code)
+  RubyRefactor::Tree.node(Parser::CurrentRuby.parse(code))
 end

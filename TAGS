@@ -1,0 +1,170 @@
+
+/home/lackita/ruby-refactor/lib/range.rb,60
+class RangeRange1,0
+  def overlaps?(range)overlaps?2,12
+
+/home/lackita/ruby-refactor/lib/ruby_refactor.rb,110
+class RubyRefactorRubyRefactor5,92
+  def self.extract_method(file_name, name:, lines:)extract_method6,111
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/mutation/append.rb,171
+class RubyRefactorRubyRefactor3,30
+  class MutationMutation4,49
+    class AppendAppend5,66
+      def initialize(tree)initialize6,83
+      def run(node)run10,142
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/mutation/replace.rb,262
+class RubyRefactorRubyRefactor1,0
+  class MutationMutation2,19
+    class ReplaceReplace3,36
+      def initialize(tree)initialize4,54
+      def run(range, with:, tree: @tree)run9,139
+      def replace_children(range, with, tree)replace_children22,462
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/version.rb,53
+module RubyRuby1,0
+  module RefactorRefactor2,12
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/file.rb,167
+class RubyRefactorRubyRefactor5,74
+  class FileFile6,93
+    def initialize(file_name)initialize7,106
+    def parseparse11,178
+    def write(tree)write15,269
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree.rb,101
+class RubyRefactorRubyRefactor10,322
+  class TreeTree11,341
+    def self.node(value)node12,354
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree/number_node.rb,146
+class RubyRefactorRubyRefactor1,0
+  class NumberNode < TreeNodeNumberNode2,19
+    def self.from_ast(node)from_ast3,49
+    def astast7,135
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree/symbol_node.rb,147
+class RubyRefactorRubyRefactor1,0
+  class SymbolNode < TreeNodeSymbolNode2,19
+    def initialize(value)initialize3,49
+    def astast10,150
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree/function_node.rb,260
+class RubyRefactorRubyRefactor1,0
+  class FunctionNode < TreeNodeFunctionNode2,19
+    def self.from_ast(ast)from_ast5,74
+    def search_sub_typesearch_sub_type15,273
+    def reconstruct_with(new_children)reconstruct_with19,319
+    def astast28,494
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree/nil_node.rb,157
+class RubyRefactorRubyRefactor1,0
+  class NilNode < TreeNodeNilNode2,19
+    def initializeinitialize3,46
+    def nil?nil?7,98
+    def astast11,131
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree/factory.rb,141
+class RubyRefactorRubyRefactor1,0
+  class TreeTree2,19
+    class FactoryFactory3,32
+      def self.create_node(value)create_node4,50
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree/node.rb,662
+class RubyRefactorRubyRefactor4,36
+  class TreeNodeTreeNode5,55
+    def initialize(options = {})initialize8,170
+    def extract_linesextract_lines20,561
+    def compact_treecompact_tree30,788
+    def can_be_flattened?can_be_flattened?38,962
+    def search(range)search42,1009
+    def build_search_result(range)build_search_result54,1229
+    def search_sub_typesearch_sub_type61,1397
+    def covered_children(range)covered_children65,1441
+    def overlaps?(line_range)overlaps?69,1525
+    def within?(range)within?73,1607
+    def reconstruct_with(new_children)reconstruct_with77,1674
+    def ==(other)==84,1824
+    def astast88,1932
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree/string_node.rb,146
+class RubyRefactorRubyRefactor1,0
+  class StringNode < TreeNodeStringNode2,19
+    def self.from_ast(node)from_ast3,49
+    def astast7,135
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/tree/constructed_node.rb,257
+class RubyRefactorRubyRefactor1,0
+  class ConstructedNode < TreeNodeConstructedNode2,19
+    def can_be_flattened?can_be_flattened?5,77
+    def prune_childrenprune_children9,165
+    def present_childrenpresent_children14,243
+    def astast18,308
+
+/home/lackita/ruby-refactor/lib/ruby_refactor/mutation.rb,281
+class RubyRefactorRubyRefactor4,82
+  class MutationMutation5,101
+    def self.chain(start, *mutations)chain6,118
+    def initialize(mutation)initialize14,305
+    def evolve(tree)evolve19,407
+    def mutator(tree)mutator23,474
+    def mutator_classmutator_class27,535
+
+/home/lackita/ruby-refactor/spec/spec_helper.rb,0
+
+/home/lackita/ruby-refactor/spec/code_folder.rb,267
+class CodeFolderCodeFolder4,36
+  def initializeinitialize5,53
+  def create_lib(contents)create_lib10,114
+  def create_file(contents)create_file16,208
+  def run_output(contents)run_output25,347
+  def lines(*lines)lines40,619
+  def teardownteardown44,692
+
+/home/lackita/ruby-refactor/spec/acceptance/extract_method_spec.rb,127
+      def say_some_stuffsay_some_stuff11,251
+def say_some_stuffsay_some_stuff23,564
+def say_somethingsay_something28,632
+
+/home/lackita/ruby-refactor/spec/ruby_refactor_spec.rb,0
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/mutation/append_spec.rb,60
+  def node(opts = {})node6,141
+  def ast(code)ast13,437
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/mutation/replace_spec.rb,69
+  def replace(code, range)replace14,654
+  def ast(code)ast25,896
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/file_spec.rb,0
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/tree/symbol_node_spec.rb,24
+  def node(x)node5,95
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/tree/constructed_node_spec.rb,38
+  def node(type, children)node9,165
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/tree/node_spec.rb,109
+  def node(opts = {})node5,93
+  def empty_node(type: :foo)empty_node17,501
+    def ast(code)ast48,1942
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/tree/string_node_spec.rb,0
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/tree/number_node_spec.rb,24
+  def node(x)node5,95
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/tree/factory_spec.rb,38
+  class BadClass; endBadClass22,916
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/tree/function_node_spec.rb,0
+
+/home/lackita/ruby-refactor/spec/ruby_refactor/tree/nil_node_spec.rb,21
+  def nodenode5,92
+
+/home/lackita/ruby-refactor/spec/range_spec.rb,0
+
+/home/lackita/ruby-refactor/bin/setup,0
+
+/home/lackita/ruby-refactor/bin/console,0

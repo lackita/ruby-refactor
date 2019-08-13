@@ -12,3 +12,6 @@
 
 # Guard
 Guardfile
+
+# emacs
+*~
