@@ -14,6 +14,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://home.colinwilliams.name"
   spec.license       = "MIT"
 
+  spec.required_ruby_version = "~> 2.6.3"
+
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
@@ -39,6 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec_junit_formatter"
   spec.add_development_dependency "guard", "~> 2.15.0"
   spec.add_development_dependency "guard-rspec", "~> 4.7.3"
   spec.add_development_dependency "byebug"
