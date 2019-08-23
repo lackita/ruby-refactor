@@ -19,5 +19,6 @@ def node(opts = {})
 end
 
 def ast(code)
-  RubyRefactor::Tree.node(Parser::CurrentRuby.parse(code))
+  ast, comments = Parser::CurrentRuby.parse_with_comments(code)
+  RubyRefactor::Tree.node(ast, comments: comments)
 end

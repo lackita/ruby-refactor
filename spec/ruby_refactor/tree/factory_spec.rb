@@ -20,6 +20,9 @@ class RubyRefactor
       it { expect(Tree.node(s(:str, "foo"))).to be_a(StringNode) }
       it { expect { Tree.node(BadClass.new) }.to raise_exception(StandardError) }
 
+      it { expect(Tree.node(s(:send), comments: "foo").comments).to eq("foo") }
+      it { expect(Tree.node(s(:def), comments: "foo").comments).to eq("foo") }
+
       class BadClass < Exception; end
     end
   end

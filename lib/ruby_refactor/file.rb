@@ -9,11 +9,12 @@ class RubyRefactor
     end
     
     def parse
-      Tree.node(Parser::CurrentRuby.parse(::File.read(@file_name)))
+      ast, comments = Parser::CurrentRuby.parse_with_comments(::File.read(@file_name))
+      Tree.node(ast, comments: comments)
     end
 
     def write(tree)
-      ::File.write(@file_name, Unparser.unparse(tree.ast))
+      ::File.write(@file_name, Unparser.unparse(tree.ast, tree.comments || []))
     end
   end
 end

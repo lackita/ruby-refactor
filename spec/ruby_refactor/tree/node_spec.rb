@@ -19,6 +19,9 @@ class RubyRefactor::Tree
     it { expect(SymbolNode.from_ast(:x)).to_not eq(NilNode.new) }
     it { expect(NumberNode.new(value: 1)).to_not eq(NilNode.new) }
 
+    it { expect(Node.new(comments: "foo").comments).to eq("foo") }
+    it { expect(Node.new(comments: "foo").reconstruct_with.comments).to eq("foo") }
+
     it { expect(ast("1 + 1").type).to eq(:send) }
     it { expect(ast("1 + 1").lines).to eq(1..1) }
     it { expect(ast("1 + 1").children).to_not be_empty }

@@ -5,9 +5,10 @@ require "ruby_refactor/file"
 RSpec.describe "formatting" do
   let!(:folder) { CodeFolder.new }
 
-  pending { expect("'some'").to retain_formatting }
+  pending { expect("'some'").to retain_style }
+  it { expect("1 + 1 # == 2").to retain_style }
 
-  RSpec::Matchers.define :retain_formatting do
+  RSpec::Matchers.define :retain_style do
     match do |code|
       expect(cycled(code)).to eq(code)
     end
@@ -20,7 +21,6 @@ RSpec.describe "formatting" do
   def cycled(code)
     path = folder.create_lib(code).path
     file = RubyRefactor::File.new(path)
-    require "byebug";byebug
     file.write(file.parse)
     File.read(path)
   end

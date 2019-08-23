@@ -12,6 +12,7 @@ class RubyRefactor
           type: :begin,
           children: [@tree, node],
           lines: @tree.lines,
+          comments: @tree.comments,
         )
       end
     end

@@ -1,12 +1,13 @@
 class RubyRefactor
   class Tree
     class FunctionNode < Node
-      def self.from_ast(ast)
+      def self.from_ast(ast, comments: [])
         new(
           ast: ast,
           type: :def,
           value: ast.children[0],
           children: ast.children[2..-1],
+          comments: comments,
         )
       end
 

@@ -8,8 +8,8 @@ require "ruby_refactor/tree/string_node"
 
 class RubyRefactor
   class Tree
-    def self.node(value)
-      Factory.create_node(value)
+    def self.node(value, options = {})
+      Factory.create_node(value, options)
     end
   end
 end

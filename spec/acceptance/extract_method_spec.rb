@@ -34,4 +34,24 @@ code
     expect(folder.run_output("say_some_stuff")).to eq(original_output)
     expect(folder.run_output("say_something")).to eq(folder.lines("stuff", "to"))
   end
+
+  pending "keeps comment with line when moved" do
+    file = folder.create_lib("
+      def say_some_stuff
+        puts 'something' # foo
+      end
+    ")
+    original_output = folder.run_output("say_some_stuff")
+
+    RubyRefactor.extract_method(file.path, name: "say_something", lines: 3..3)
+
+    expect(File.read(file.path)).to eq(<<-code.strip)
+def say_some_stuff
+  say_something
+end
+def say_something
+  puts("something") # foo
+end
+code
+  end
 end

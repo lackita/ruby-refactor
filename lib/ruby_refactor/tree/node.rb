@@ -7,6 +7,7 @@ class RubyRefactor
     class Node
       include Searchable
       attr_reader :type, :children, :value, :lines
+      attr_accessor :comments
 
       def initialize(options = {})
         @original_ast = options[:ast]
@@ -15,6 +16,7 @@ class RubyRefactor
         @lines = options[:lines] || extract_lines
         @value = options[:value]
         @children = @children.map { |child| Tree.node(child) }
+        @comments = options[:comments] || []
       end
 
       def extract_lines
@@ -32,6 +34,7 @@ class RubyRefactor
           type: type,
           children: children,
           value: value,
+          comments: @comments,
         )
       end
 
