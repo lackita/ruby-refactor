@@ -6,7 +6,7 @@ class RubyRefactor
       end
 
       def ast
-        Parser::AST::Node.new(:int, [value])
+        ::Parser::AST::Node.new(:int, [value])
       end
     end
   end

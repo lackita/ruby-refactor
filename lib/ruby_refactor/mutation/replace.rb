@@ -1,26 +1,15 @@
 class RubyRefactor
   class Mutation
     class Replace
-      def initialize(tree)
-        @tree = tree
-        @replaced = false
+      def initialize(parser)
+        @parser = parser
       end
 
-      def run(range, with:, tree: @tree)
-        if !tree.overlaps?(range)
-          tree
-        elsif tree.partially_within?(range)
-          tree.reconstruct_with(children: replace_children(range, with, tree))
-        elsif @replaced
-          Tree::NilNode.new
-        else
-          @replaced = true
-          with
+      def run(range, with:)
+        if range.first <= range.last
+          @parser.remove_trailing_comments(range)
+          @parser.replace(range, with: with)
         end
-      end
-
-      def replace_children(range, with, tree)
-        tree.children.flat_map { |c| run(range, with: with, tree: c) }
       end
     end
   end

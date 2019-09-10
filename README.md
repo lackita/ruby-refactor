@@ -1,6 +1,6 @@
 # ruby-refactor
 
-This is an automated refactoring tool for ruby that's agnostic to text editor. Currently, this is in very early stages, you can follow progress on https://trello.com/b/ezFGompY/ruby-refactoring
+This is an automated refactoring tool for ruby that's agnostic to text editor. Currently, this is in very early stages, but I'll try to post milestones on my [blog](https://blog.colinwilliams.name).
 
 ## Installation
 

@@ -12,7 +12,7 @@ class RubyRefactor
       end
 
       def ast
-        Parser::AST::Node.new(:def, [value, Parser::AST::Node.new(:args),
+        ::Parser::AST::Node.new(:def, [value, ::Parser::AST::Node.new(:args),
                                      *children.map(&:ast)])
       end
     end

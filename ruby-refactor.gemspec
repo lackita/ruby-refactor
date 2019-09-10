@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "ruby_refactor/version"
@@ -47,5 +46,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "byebug"
 
   spec.add_dependency "parser", "~> 2.6.3"
-  spec.add_dependency "unparser", "~> 0.4.5"
 end

@@ -9,7 +9,7 @@ class RubyRefactor
       end
 
       def ast
-        Parser::AST::Node.new(:str, [value])
+        ::Parser::AST::Node.new(:str, [value])
       end
     end
   end
